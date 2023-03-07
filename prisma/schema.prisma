@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model products {
+  id           Int      @id @default(autoincrement())
+  name         String   @unique @db.VarChar
+  manufacturer String   @db.VarChar
+  categoryid   Int
+  category     category @relation(fields: [categoryid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model category {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique @db.VarChar
+  sector   Int
+  products products[]
+}
