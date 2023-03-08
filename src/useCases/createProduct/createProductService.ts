@@ -4,9 +4,9 @@ import { ProductsRepository } from '../../repositories/productsRepository';
 export class CreateProductService {
   constructor(private productRepository: ProductsRepository) {}
 
-  execute({ name, manufacturer, category }: Product): void {
-    if (!name || !manufacturer || !category) throw new Error("All fields are mandatory!");
+  execute({ name, manufacturer, categoryId }: Product): void {
+    if (!name || !manufacturer || !categoryId) throw new Error("All fields are mandatory!");
 
-    this.productRepository.create({ name, manufacturer, category });
+    this.productRepository.create({ name, manufacturer, categoryId });
   }
 }

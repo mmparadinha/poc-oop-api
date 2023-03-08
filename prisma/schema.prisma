@@ -11,8 +11,8 @@ model products {
   id           Int      @id @default(autoincrement())
   name         String   @unique @db.VarChar
   manufacturer String   @db.VarChar
-  categoryid   Int
-  category     category @relation(fields: [categoryid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  categoryId   Int
+  category     category @relation(fields: [categoryId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "products_categoryid_fkey")
 }
 
 model category {
