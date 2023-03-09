@@ -1,9 +1,10 @@
 import { ProductsRepository } from '../../repositories/productsRepository';
-import { ListProductsController } from '../deleteProduct/removeProductController';
-import { ListProductsService } from '../deleteProduct/removeProductService';
+import { ModifyProductController } from './modifyProductController';
+import { ModifyProductService } from './modifyProductService';
+
 
 const productRepository = new ProductsRepository();
-const listProductsService = new ListProductsService(productRepository);
-export const listProductsController = new ListProductsController(
-  listProductsService
+const modifyProductService = new ModifyProductService(productRepository);
+export const modifyProductController = new ModifyProductController(
+  modifyProductService
 );

@@ -19,7 +19,20 @@ export class ProductsRepository {
   async remove(id: number) {
     await prisma.products.delete({
       where: {
-        id: id
+        id
+      }
+    });
+  }
+
+  async modify({ id, name, manufacturer, categoryId }: Product): Promise<void> {
+    await prisma.products.update({
+      data: {
+        name,
+        manufacturer,
+        categoryId
+      },
+      where: {
+        id
       }
     });
   }
