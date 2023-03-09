@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createProductController } from '../useCases/createProduct';
-import { removeProductController } from '../useCases/deleteProduct';
+import { removeProductController } from '../useCases/removeProduct';
 import { listProductsController } from '../useCases/listProducts';
 import { modifyProductController } from '../useCases/updateProduct';
 

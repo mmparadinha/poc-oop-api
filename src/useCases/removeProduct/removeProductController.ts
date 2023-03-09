@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { RemoveProductService } from './removeProductService';
 
 export class RemoveProductController {
-  constructor(private removeProductService: RemoveProductService) { }
+  constructor(private removeProductService: RemoveProductService) {}
 
   handle(req: Request, res: Response): Response {
     const { id } = req.params;
