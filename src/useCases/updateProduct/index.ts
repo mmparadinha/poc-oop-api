@@ -1,6 +1,6 @@
 import { ProductsRepository } from '../../repositories/productsRepository';
-import { ListProductsController } from './listProductsController';
-import { ListProductsService } from './listProductsService';
+import { ListProductsController } from '../deleteProduct/removeProductController';
+import { ListProductsService } from '../deleteProduct/removeProductService';
 
 const productRepository = new ProductsRepository();
 const listProductsService = new ListProductsService(productRepository);
